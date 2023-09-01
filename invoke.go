@@ -38,7 +38,8 @@ type invokeOptions struct {
 
 // InvokeInfo provides information about an Invoke.
 type InvokeInfo struct {
-	Inputs []*Input
+	Inputs       []*Input
+	ReturnValues []*reflect.Value
 }
 
 // FillInvokeInfo is an InvokeOption that writes information on the types
@@ -160,6 +161,13 @@ func (s *Scope) Invoke(function interface{}, opts ...InvokeOption) (err error) {
 	returned := s.invokerFn(reflect.ValueOf(function), args)
 	if len(returned) == 0 {
 		return nil
+	}
+
+	if options.Info != nil {
+		options.Info.ReturnValues = make([]*reflect.Value, len(returned))
+		for i, v := range returned {
+			options.Info.ReturnValues[i] = &v
+		}
 	}
 	if last := returned[len(returned)-1]; isError(last.Type()) {
 		if err, _ := last.Interface().(error); err != nil {
