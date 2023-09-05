@@ -1,4 +1,4 @@
-package: go.uber.org/dig
+package: github.com/expectedsh/dig
 license: MIT
 testImport:
 - package: github.com/stretchr/testify

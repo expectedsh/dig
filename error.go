@@ -27,8 +27,8 @@ import (
 	"reflect"
 	"sort"
 
-	"go.uber.org/dig/internal/digreflect"
-	"go.uber.org/dig/internal/dot"
+	"github.com/expectedsh/dig/internal/digreflect"
+	"github.com/expectedsh/dig/internal/dot"
 )
 
 // Error is an interface implemented by all Dig errors.

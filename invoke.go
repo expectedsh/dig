@@ -22,8 +22,8 @@ package dig
 
 import (
 	"fmt"
-	"go.uber.org/dig/internal/digreflect"
-	"go.uber.org/dig/internal/graph"
+	"github.com/expectedsh/dig/internal/digreflect"
+	"github.com/expectedsh/dig/internal/graph"
 	"reflect"
 )
 

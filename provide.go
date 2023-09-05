@@ -26,9 +26,9 @@ import (
 	"reflect"
 	"strings"
 
-	"go.uber.org/dig/internal/digreflect"
-	"go.uber.org/dig/internal/dot"
-	"go.uber.org/dig/internal/graph"
+	"github.com/expectedsh/dig/internal/digreflect"
+	"github.com/expectedsh/dig/internal/dot"
+	"github.com/expectedsh/dig/internal/graph"
 )
 
 // A ProvideOption modifies the default behavior of Provide.
@@ -50,7 +50,8 @@ func (o *provideOptions) Validate() error {
 	if len(o.Group) > 0 {
 		if len(o.Name) > 0 {
 			return newErrInvalidInput(
-				fmt.Sprintf("cannot use named values with value groups: name:%q provided with group:%q", o.Name, o.Group), nil)
+				fmt.Sprintf("cannot use named values with value groups: name:%q provided with group:%q", o.Name,
+					o.Group), nil)
 		}
 	}
 

@@ -29,10 +29,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/expectedsh/dig"
+	"github.com/expectedsh/dig/internal/digtest"
+	"github.com/expectedsh/dig/internal/dot"
 	"github.com/stretchr/testify/assert"
-	"go.uber.org/dig"
-	"go.uber.org/dig/internal/digtest"
-	"go.uber.org/dig/internal/dot"
 )
 
 func TestDotGraph(t *testing.T) {
